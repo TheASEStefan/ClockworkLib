@@ -1,8 +1,8 @@
 package net.asestefan.utils;
 
-import org.joml.Matrix4f;
-import org.joml.Quaternionf;
-import org.joml.Vector3f;
+import com.mojang.math.Matrix4f;
+import com.mojang.math.Quaternion;
+import com.mojang.math.Vector3f;
 
 /*
 @Author = ASEStefan
@@ -35,15 +35,15 @@ public class QuaternionUtils {
         };
     }
 
-    public static Quaternionf slerp(Quaternionf from, Quaternionf to, float alpha) {
-        float ax = from.x();
-        float ay = from.y();
-        float az = from.z();
-        float aw = from.w();
-        float bx = to.x();
-        float by = to.y();
-        float bz = to.z();
-        float bw = to.w();
+    public static Quaternion slerp(Quaternion from, Quaternion to, float alpha) {
+        float ax = from.i();
+        float ay = from.j();
+        float az = from.k();
+        float aw = from.r();
+        float bx = to.i();
+        float by = to.j();
+        float bz = to.r();
+        float bw = to.k();
 
         float dot = ax * bx + ay * by + az * bz + aw * bw;
         if (dot < 0) {
@@ -68,25 +68,7 @@ public class QuaternionUtils {
         float ry = s0 * ay + s1 * by;
         float rz = s0 * az + s1 * bz;
         float rw = s0 * aw + s1 * bw;
-        return new Quaternionf(rx, ry, rz, rw);
+        return new Quaternion(rx, ry, rz, rw);
     }
 
-    public static Vector3f getEulerAngles(Matrix4f matrix){
-        double sy = Math.sqrt(matrix.m00() * matrix.m00() + matrix.m10() * matrix.m10());
-        boolean singular = sy < 1e-6;
-        double x, y, z;
-        if (!singular)
-        {
-            x = Math.atan2(matrix.m21(), matrix.m22());
-            y = Math.atan2(-matrix.m20(), sy);
-            z = Math.atan2(matrix.m10(), matrix.m00());
-        }
-        else
-        {
-            x = Math.atan2(-matrix.m12(), matrix.m11());
-            y = Math.atan2(-matrix.m20(), sy);
-            z = 0;
-        }
-        return new Vector3f((float) x, (float) y, (float) z);
-    }
 }

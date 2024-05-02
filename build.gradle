@@ -8,7 +8,7 @@ plugins {
 }
 
 
-version = '1.20.1-1.0.0'
+version = '1.19.2-1.0.0'
 group = 'net.asestefan.api' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'clockwork'
 
@@ -145,7 +145,7 @@ repositories {
 
 dependencies {
 
-    minecraft 'net.minecraftforge:forge:1.20.1-47.2.30'
+    minecraft 'net.minecraftforge:forge:1.19.2-43.3.13'
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
     // The "userdev" classifier will be requested and setup by ForgeGradle.

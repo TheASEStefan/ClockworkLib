@@ -1,7 +1,5 @@
 package net.asestefan.utils;
 
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.SoundType;
 
 /*
 @Author = ASEStefan
@@ -21,7 +19,9 @@ public class BlockSoundUtils {
     private static final float volume = 1.0F;
     private static final float pitch = 1.05F;
     private float lerpingSound = MathUtils.lerp(volume * pitch, volume + 0, volume + MathUtils.PI * 2);
-    public static final SoundType EMPTY = new SoundType(volume, pitch, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY);
+
+    // @Disclaimer = SoundEvents.EMPTY doesn't exist on 1.19.3, hence why this is commented.
+    // public static final SoundType EMPTY = new SoundType(volume, pitch, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY, SoundEvents.EMPTY);
 
 
 }
