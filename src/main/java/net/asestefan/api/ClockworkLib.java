@@ -1,6 +1,8 @@
 package net.asestefan.api;
 
 import com.mojang.logging.LogUtils;
+import net.asestefan.hitbox.HitboxTypes;
+import net.asestefan.hitbox.SpecialHitboxTypes;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -61,6 +63,7 @@ public class ClockworkLib {
 
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        HitboxTypes.start();
+        SpecialHitboxTypes.start();
     }
 }

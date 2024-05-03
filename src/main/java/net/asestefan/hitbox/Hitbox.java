@@ -1,5 +1,6 @@
 package net.asestefan.hitbox;
 
+
 /**
  * @Author = ASEStefan
  * @Disclaimer = Used to create mob hitboxes.
@@ -14,6 +15,7 @@ public class Hitbox {
         this.height = height;
     }
 
+
     public Hitbox getHitbox(float width, float height) {
         Hitbox hitbox = new Hitbox(width, height);
 
@@ -27,6 +29,7 @@ public class Hitbox {
     public float getHeight() {
         return this.height;
     }
+
 
 
 
